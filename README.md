@@ -99,7 +99,7 @@ Open:
 
 - Password:de_pass
 
-#Data Quality & Validation (What I Checked)
+# Data Quality & Validation (What I Checked)
 
 - Duplicate order_id handling (dedup in Silver)
 
@@ -112,8 +112,6 @@ Open:
 - Null payment_method handled consistently
 
 - Sanity checks on totals between stages (counts/aggregates)
-
-```
 
 # Appendix — Bronze Data Contract (Raw Inputs)
 
