@@ -62,10 +62,12 @@ The main sales fact is at **region-month grain** (one row per region per month).
 - `dashboards/powerbi/` Power BI `.pbix`
 
 ## How to Run (Local)
+
 ### 1) Start PostgreSQL with Docker
 ```bash
 docker compose up -d
 docker compose ps
+
 
 2) Generate Bronze data
 python src/00_ingest_bronze/generate_bronze.py
