@@ -64,7 +64,7 @@ The main sales fact is at **region-month grain** (one row per region per month).
 ## How to Run (Local)
 
 ### 1) Start PostgreSQL with Docker
-```bash
+'''bash
 docker compose up -d
 docker compose ps```
 
@@ -112,8 +112,6 @@ Orphan order_items (items with no matching order) detected
 Null payment_method handled consistently
 
 Sanity checks on totals between stages (counts/aggregates)
-
-```powershell
 
 # Appendix — Bronze Data Contract (Raw Inputs)
 Bronze: orders (one row per order)
