@@ -64,7 +64,7 @@ The main sales fact is at **region-month grain** (one row per region per month).
 ## How to Run (Local)
 
 ### 1) Start PostgreSQL with Docker
-'''bash
+```bash
 docker compose up -d
 docker compose ps```
 
@@ -83,93 +83,95 @@ python src/30_load/apply_schema.py
 6) Load Gold marts into PostgreSQL
 python src/30_load/load_gold_to_postgres.py
 
-Power BI
+## Power BI
 
 Open:
 
-dashboards/powerbi/Retail-Sales.pbix
+- dashboards/powerbi/Retail-Sales.pbix
 
-Connect to PostgreSQL:
+- Connect to PostgreSQL:
 
-Server:localhost
+- Server:localhost
 
-Database:retail
+- Database:retail
 
-User:de_user
+- User:de_user
 
-Password:de_pass
+- Password:de_pass
 
-Data Quality & Validation (What I Checked)
+#Data Quality & Validation (What I Checked)
 
-Duplicate order_id handling (dedup in Silver)
+- Duplicate order_id handling (dedup in Silver)
 
-Invalid quantities (<= 0) filtered or corrected
+- Invalid quantities (<= 0) filtered or corrected
 
-Invalid discounts (e.g., > 0.50) handled as bad records
+- Invalid discounts (e.g., > 0.50) handled as bad records
 
-Orphan order_items (items with no matching order) detected
+- Orphan order_items (items with no matching order) detected
 
-Null payment_method handled consistently
+- Null payment_method handled consistently
 
-Sanity checks on totals between stages (counts/aggregates)
+- Sanity checks on totals between stages (counts/aggregates)
 
+```md
 # Appendix — Bronze Data Contract (Raw Inputs)
-Bronze: orders (one row per order)
+
+## Bronze: orders (one row per order)
 
 Columns:
 
-order_id (string) – unique order identifier (a few duplicates injected for testing)
+- order_id (string) – unique order identifier (a few duplicates injected for testing)
 
-order_ts (timestamp) – order datetime (spans 2023–2024)
+- order_ts (timestamp) – order datetime (spans 2023–2024)
 
-customer_id (string)
+- customer_id (string)
 
-region (string) – North, South, East, West (uneven distribution)
+- region (string) – North, South, East, West (uneven distribution)
 
-payment_method (string) – Card, PayPal, Cash (some nulls injected)
+- payment_method (string) – Card, PayPal, Cash (some nulls injected)
 
-order_status (string) – Completed, Cancelled, Returned
+- order_status (string) – Completed, Cancelled, Returned
 
-currency (string) – EUR
+- currency (string) – EUR
 
-ingestion_date (date) – load date (partition key)
+- ingestion_date (date) – load date (partition key)
 
 Intended rules:
 
-order_id should be unique (duplicates injected to test dedup logic)
+- order_id should be unique (duplicates injected to test dedup logic)
 
-Small % Cancelled/Returned to simulate real behavior
+- Small % Cancelled/Returned to simulate real behavior
 
-Some missing payment_method to test null handling
+- Some missing payment_method to test null handling
 
 
-Bronze: order_items (multiple rows per order)
+# Bronze: order_items (multiple rows per order)
 
 Columns:
 
-order_id (string) – FK to orders (a few orphan lines injected)
+- order_id (string) – FK to orders (a few orphan lines injected)
 
-line_id (int) – line number within order
+- line_id (int) – line number within order
 
-product_id (string)
+- product_id (string)
 
-quantity (int) – typically 1–5 (rare outliers injected)
+- quantity (int) – typically 1–5 (rare outliers injected)
 
-unit_price (decimal) – realistic price ranges
+- unit_price (decimal) – realistic price ranges
 
-discount_pct (decimal) – typically 0–0.30 (invalid values injected > 0.50)
+- discount_pct (decimal) – typically 0–0.30 (invalid values injected > 0.50)
 
-ingestion_date (date) – load date (partition key)
+- ingestion_date (date) – load date (partition key)
 
 
 Intended rules:
 
-Each order has 1–6 items
+- Each order has 1–6 items
 
-quantity should be > 0 (some bad records injected)
+- quantity should be > 0 (some bad records injected)
 
-unit_price should be > 0
+- unit_price should be > 0
 
-discount_pct should be between 0 and 0.30 (some invalid injected)
+- discount_pct should be between 0 and 0.30 (some invalid injected)
 
-order_items.order_id should exist in orders (some orphans injected to test referential checks)
+- order_items.order_id should exist in orders (some orphans injected to test referential checks)
