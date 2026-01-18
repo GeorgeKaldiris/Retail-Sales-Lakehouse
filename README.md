@@ -113,7 +113,7 @@ Null payment_method handled consistently
 
 Sanity checks on totals between stages (counts/aggregates)
 
-```md
+
 ### Appendix — Bronze Data Contract (Raw Inputs)
 Bronze: orders (one row per order)
 
