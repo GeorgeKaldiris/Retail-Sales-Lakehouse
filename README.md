@@ -87,7 +87,7 @@ Power BI
 
 Open:
 
-dashboards/powerbi/Retail-Sales.pbix
+dashboards/powerbi/Retail-Sales-Lakehouse.pbix
 
 Connect to PostgreSQL:
 
