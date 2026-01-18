@@ -83,7 +83,7 @@ python src/30_load/apply_schema.py
 6) Load Gold marts into PostgreSQL
 python src/30_load/load_gold_to_postgres.py
 
-Power BI
+## Power BI
 
 Open:
 
@@ -91,13 +91,13 @@ dashboards/powerbi/Retail-Sales.pbix
 
 Connect to PostgreSQL:
 
-Server:localhost
+Server: localhost
 
-Database:retail
+Database: retail
 
-User:de_user
+User: de_user
 
-Password:de_pass
+Password: de_pass
 
 Data Quality & Validation (What I Checked)
 
