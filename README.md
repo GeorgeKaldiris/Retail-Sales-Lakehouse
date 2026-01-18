@@ -68,7 +68,6 @@ The main sales fact is at **region-month grain** (one row per region per month).
 docker compose up -d
 docker compose ps
 
-
 2) Generate Bronze data
 python src/00_ingest_bronze/generate_bronze.py
 
@@ -86,7 +85,9 @@ python src/30_load/load_gold_to_postgres.py
 
 Power BI
 
-Open: dashboards/powerbi/Retail-Sales-Lakehouse.pbix
+Open:
+
+dashboards/powerbi/Retail-Sales.pbix
 
 Connect to PostgreSQL:
 
@@ -98,8 +99,7 @@ User: de_user
 
 Password: de_pass
 
-
-Data Quality & Validation (What I Checked):
+Data Quality & Validation (What I Checked)
 
 Duplicate order_id handling (dedup in Silver)
 
