@@ -87,7 +87,7 @@ Power BI
 
 Open:
 
-dashboards/powerbi/Retail-Sales-Lakehouse.pbix
+dashboards/powerbi/Retail-Sales.pbix
 
 Connect to PostgreSQL:
 
@@ -113,7 +113,8 @@ Null payment_method handled consistently
 
 Sanity checks on totals between stages (counts/aggregates)
 
-Appendix — Bronze Data Contract (Raw Inputs)
+```md
+### Appendix — Bronze Data Contract (Raw Inputs)
 Bronze: orders (one row per order)
 
 Columns:
