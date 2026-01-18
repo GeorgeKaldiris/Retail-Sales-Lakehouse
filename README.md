@@ -68,20 +68,15 @@ The main sales fact is at **region-month grain** (one row per region per month).
 docker compose up -d
 docker compose ps
 
-2) Generate Bronze data
-python src/00_ingest_bronze/generate_bronze.py
+2) Generate Bronze data: python src/00_ingest_bronze/generate_bronze.py
 
-3) Bronze → Silver
-python src/10_bronze_to_silver/bronze_to_silver.py
+3) Bronze → Silver: python src/10_bronze_to_silver/bronze_to_silver.py
 
-4) Silver → Gold
-python src/20_silver_to_gold/silver_to_gold.py
+4) Silver → Gold: python src/20_silver_to_gold/silver_to_gold.py
 
-5) Apply schema
-python src/30_load/apply_schema.py
+5) Apply schema: python src/30_load/apply_schema.py
 
-6) Load Gold marts into PostgreSQL
-python src/30_load/load_gold_to_postgres.py
+6) Load Gold marts into PostgreSQL: python src/30_load/load_gold_to_postgres.py
 
 Power BI
 
@@ -91,13 +86,13 @@ dashboards/powerbi/Retail-Sales.pbix
 
 Connect to PostgreSQL:
 
-Server: localhost
+Server:localhost
 
-Database: retail
+Database:retail
 
-User: de_user
+User:de_user
 
-Password: de_pass
+Password:de_pass
 
 Data Quality & Validation (What I Checked)
 
@@ -114,7 +109,7 @@ Null payment_method handled consistently
 Sanity checks on totals between stages (counts/aggregates)
 
 
-### Appendix — Bronze Data Contract (Raw Inputs)
+# Appendix — Bronze Data Contract (Raw Inputs)
 Bronze: orders (one row per order)
 
 Columns:
