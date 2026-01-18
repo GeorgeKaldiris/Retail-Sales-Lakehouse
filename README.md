@@ -83,11 +83,7 @@ python src/30_load/apply_schema.py
 6) Load Gold marts into PostgreSQL
 python src/30_load/load_gold_to_postgres.py
 
-<<<<<<< HEAD
 ## Power BI
-=======
-### Power BI
->>>>>>> 3377c5bfa4b52fe8ed983234412eb9503e5263bc
 
 Open:
 
@@ -95,7 +91,6 @@ Open:
 
 - Connect to PostgreSQL:
 
-<<<<<<< HEAD
 - Server:localhost
 
 - Database:retail
@@ -103,15 +98,6 @@ Open:
 - User:de_user
 
 - Password:de_pass
-=======
-Server: localhost
-
-Database: retail
-
-User: de_user
-
-Password: de_pass
->>>>>>> 3377c5bfa4b52fe8ed983234412eb9503e5263bc
 
 #Data Quality & Validation (What I Checked)
 
@@ -127,7 +113,10 @@ Password: de_pass
 
 - Sanity checks on totals between stages (counts/aggregates)
 
+```
+
 ```md
+
 # Appendix — Bronze Data Contract (Raw Inputs)
 
 ## Bronze: orders (one row per order)
@@ -188,8 +177,6 @@ Intended rules:
 
 - discount_pct should be between 0 and 0.30 (some invalid injected)
 
-<<<<<<< HEAD
 - order_items.order_id should exist in orders (some orphans injected to test referential checks)
-=======
-order_items.order_id should exist in orders (some orphans injected to test referential checks)
->>>>>>> 3377c5bfa4b52fe8ed983234412eb9503e5263bc
+
+```
