@@ -64,9 +64,9 @@ The main sales fact is at **region-month grain** (one row per region per month).
 ## How to Run (Local)
 
 ### 1) Start PostgreSQL with Docker
-```bash
+'''bash
 docker compose up -d
-docker compose ps```
+docker compose ps
 
 2) Generate Bronze data 
 python src/00_ingest_bronze/generate_bronze.py
@@ -83,7 +83,11 @@ python src/30_load/apply_schema.py
 6) Load Gold marts into PostgreSQL
 python src/30_load/load_gold_to_postgres.py
 
+<<<<<<< HEAD
 ## Power BI
+=======
+### Power BI
+>>>>>>> 3377c5bfa4b52fe8ed983234412eb9503e5263bc
 
 Open:
 
@@ -91,6 +95,7 @@ Open:
 
 - Connect to PostgreSQL:
 
+<<<<<<< HEAD
 - Server:localhost
 
 - Database:retail
@@ -98,6 +103,15 @@ Open:
 - User:de_user
 
 - Password:de_pass
+=======
+Server: localhost
+
+Database: retail
+
+User: de_user
+
+Password: de_pass
+>>>>>>> 3377c5bfa4b52fe8ed983234412eb9503e5263bc
 
 #Data Quality & Validation (What I Checked)
 
@@ -174,4 +188,8 @@ Intended rules:
 
 - discount_pct should be between 0 and 0.30 (some invalid injected)
 
+<<<<<<< HEAD
 - order_items.order_id should exist in orders (some orphans injected to test referential checks)
+=======
+order_items.order_id should exist in orders (some orphans injected to test referential checks)
+>>>>>>> 3377c5bfa4b52fe8ed983234412eb9503e5263bc
