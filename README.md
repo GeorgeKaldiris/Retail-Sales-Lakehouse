@@ -91,13 +91,13 @@ Open:
 
 - Connect to PostgreSQL:
 
-- Server:localhost
+- Server: localhost
 
-- Database:retail
+- Database: retail
 
-- User:de_user
+- User: de_user
 
-- Password:de_pass
+- Password: de_pass
 
 # Data Quality & Validation (What I Checked)
 
