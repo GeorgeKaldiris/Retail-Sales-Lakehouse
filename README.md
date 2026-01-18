@@ -113,11 +113,13 @@ Open:
 
 - Sanity checks on totals between stages (counts/aggregates)
 
-# Appendix — Bronze Data Contract (Raw Inputs)
+## Appendix — Bronze Data Contract (Raw Inputs)
+
+This section defines the raw input contract for the Bronze layer (raw snapshots). It documents the expected columns, data types, and key quality rules used for downstream validation and transformations.
 
 ## Bronze: orders (one row per order)
 
-Columns:
+### Columns:
 
 - order_id (string) – unique order identifier (a few duplicates injected for testing)
 
@@ -135,7 +137,7 @@ Columns:
 
 - ingestion_date (date) – load date (partition key)
 
-Intended rules:
+### Intended rules:
 
 - order_id should be unique (duplicates injected to test dedup logic)
 
