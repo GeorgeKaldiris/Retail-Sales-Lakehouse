@@ -115,8 +115,6 @@ Open:
 
 ```
 
-```md
-
 # Appendix — Bronze Data Contract (Raw Inputs)
 
 ## Bronze: orders (one row per order)
@@ -178,5 +176,3 @@ Intended rules:
 - discount_pct should be between 0 and 0.30 (some invalid injected)
 
 - order_items.order_id should exist in orders (some orphans injected to test referential checks)
-
-```
