@@ -148,7 +148,7 @@ This section defines the raw input contract for the Bronze layer (raw snapshots)
 
 # Bronze: order_items (multiple rows per order)
 
-Columns:
+### Columns:
 
 - order_id (string) – FK to orders (a few orphan lines injected)
 
@@ -165,7 +165,7 @@ Columns:
 - ingestion_date (date) – load date (partition key)
 
 
-Intended rules:
+### Intended rules:
 
 - Each order has 1–6 items
 
