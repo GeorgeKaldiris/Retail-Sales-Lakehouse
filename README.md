@@ -83,7 +83,7 @@ python src/30_load/apply_schema.py
 6) Load Gold marts into PostgreSQL
 python src/30_load/load_gold_to_postgres.py
 
-✅ The load step is idempotent: fact tables are truncated and reloaded each run to prevent duplicates.'''
+✅ The load step is idempotent: fact tables are truncated and reloaded each run to prevent duplicates.
 
 ## Power BI
 
@@ -177,4 +177,4 @@ This section defines the raw input contract for the Bronze layer (raw snapshots)
 
 - discount_pct should be between 0 and 0.30 (some invalid injected)
 
-- order_items.order_id should exist in orders (some orphans injected to test referential checks)
+- order_items.order_id should exist in orders (some orphans injected to test referential checks)```
