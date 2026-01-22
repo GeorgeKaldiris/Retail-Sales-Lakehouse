@@ -64,7 +64,7 @@ The main sales fact is at **region-month grain** (one row per region per month).
 ## How to Run (Local)
 
 ### 1) Start PostgreSQL with Docker
-```bash
+΄΄΄bash
 docker compose up -d
 docker compose ps
 
@@ -178,4 +178,3 @@ This section defines the raw input contract for the Bronze layer (raw snapshots)
 - discount_pct should be between 0 and 0.30 (some invalid injected)
 
 - order_items.order_id should exist in orders (some orphans injected to test referential checks)
-```
