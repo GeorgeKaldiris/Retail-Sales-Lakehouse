@@ -177,4 +177,5 @@ This section defines the raw input contract for the Bronze layer (raw snapshots)
 
 - discount_pct should be between 0 and 0.30 (some invalid injected)
 
-- order_items.order_id should exist in orders (some orphans injected to test referential checks)```
+- order_items.order_id should exist in orders (some orphans injected to test referential checks)
+```
