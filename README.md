@@ -83,6 +83,8 @@ python src/30_load/apply_schema.py
 6) Load Gold marts into PostgreSQL
 python src/30_load/load_gold_to_postgres.py
 
+✅ The load step is idempotent: fact tables are truncated and reloaded each run to prevent duplicates.
+
 ## Power BI
 
 Open:
