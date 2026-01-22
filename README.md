@@ -64,7 +64,6 @@ The main sales fact is at **region-month grain** (one row per region per month).
 ## How to Run (Local)
 
 ### 1) Start PostgreSQL with Docker
-### 1) Start PostgreSQL with Docker
 ```bash
 docker compose up -d
 docker compose ps
