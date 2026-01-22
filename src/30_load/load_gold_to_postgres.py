@@ -29,6 +29,14 @@ def main() -> None:
     conn = psycopg2.connect(
         host=DB_HOST, port=DB_PORT, dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD
     )
+    
+# Idempotent full-refresh load: truncate facts then reload
+    cur = conn.cursor()
+    cur.execute("TRUNCATE TABLE retail.fact_sales_monthly;")
+    cur.execute("TRUNCATE TABLE retail.fact_top_products_monthly;")
+    conn.commit()
+    cur.close()
+
     conn.autocommit = False
 
     try:
